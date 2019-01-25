@@ -1,0 +1,3 @@
+{% for channel, conversation in all_conversations %}
+  {{ channel }}-{% for convo in conversation %} {{ convo }} {% endfor %}
+{% endfor %}
