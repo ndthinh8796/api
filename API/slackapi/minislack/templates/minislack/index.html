@@ -1,3 +1,4 @@
-{% for channel, conversation in all_conversations %}
-  {{ channel }}-{% for convo in conversation %} {{ convo }} {% endfor %}
+<h1> Intekers Announcements </h1>
+{% for message in messages %}
+  <h3>{{ message.user }}</h3>{{ message.text }}<br><br>
 {% endfor %}
