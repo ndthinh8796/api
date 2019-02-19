@@ -1,0 +1,10 @@
+{
+  "method": "get",
+  "url": "https://slack.com/api/",
+  "endpoint": "conversations.list",
+  "params": {
+    "token": "XXXXXXXXXXXX",
+    "limit": "5"
+  },
+  "data": "value"
+}
