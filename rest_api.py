@@ -1,20 +1,44 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 
-import requests as rq
+import requests
 import json
 
 
 def read_file():
     """
-    read json file and return a dictionary
+    Read json file and return a dictionary
     """
     request = json.load(open("config.json"))
     return request
 
 
-if __name__ == "__main__":
+def request_get(get_url, params):
+    """
+    Send a GET request
+    """
+    return requests.get(get_url, params=params)
+
+
+def request_post(post_url, data):
+    """
+    Send a POST request
+    """
+    return requests.post(post_url, data=data)
+
+
+def main():
+    methods = {
+        "post": request_post,
+        "get": request_get
+    }
     r = read_file()
-    if r["method"] == "get":
-        response = rq.get(r["url"] + r["endpoint"], params=r["params"])
-    print(response.json())
-    print(response.status_code)
+    response = methods[r["method"]](r["url"] + r["endpoint"], r["payload"])
+    result = response.json()
+    if result["ok"]:
+        print(result)
+    else:
+        print(result["error"])
+
+
+if __name__ == "__main__":
+    main()

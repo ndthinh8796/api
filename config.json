@@ -1,10 +1,10 @@
 {
-  "method": "get",
+  "method": "post",
   "url": "https://slack.com/api/",
-  "endpoint": "conversations.list",
-  "params": {
-    "token": "XXXXXXXXXXXX",
-    "limit": "5"
-  },
-  "data": "value"
+  "endpoint": "chat.postMessage",
+  "payload": {
+    "token": "xoxp-452524853910-452531064822-555385444485-98e6140af231eb797516e64c8a416306",
+    "channel": "GGB005WG1",
+    "text": "ahihi"
+  }
 }
