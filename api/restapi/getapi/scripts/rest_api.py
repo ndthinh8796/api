@@ -17,7 +17,10 @@ def get_response(url, method, params={}, data={}, headers={}, json={}):
     methods = {
         "get": requests.get,
         "post": requests.post,
-        "delete": requests.delete
+        "put": requests.put,
+        "delete": requests.delete,
+        "head": requests.head,
+        "options": requests.options
     }
     response = methods[method](url,
                                params=params,

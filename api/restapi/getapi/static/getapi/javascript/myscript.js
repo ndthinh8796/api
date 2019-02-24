@@ -49,7 +49,7 @@ function createInputField(name, field) {
 
 function showBodyBlock(choice){
   var body_block = document.querySelector("#body_block");
-  if(choice.options[ choice.selectedIndex ].value === "get"){
+  if(choice.options[ choice.selectedIndex ].value === "get" || choice.options[ choice.selectedIndex ].value === "head"){
     body_block.style.display = "none";
   } else {
     body_block.style.display = "block";

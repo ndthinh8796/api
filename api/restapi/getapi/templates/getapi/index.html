@@ -6,7 +6,10 @@
       <select id="method_selection" name="method" form="request_form">
         <option value="get">Get</option>
         <option value="post">Post</option>
+        <option value="put">Put</option>
         <option value="delete">Delete</option>
+        <option value="head">Head</option>
+        <option value="options">Options</option>
       </select>
       <div id="form_block">
         <form id="request_form" action="{% url 'getapi:detail' %}" method='get'>
