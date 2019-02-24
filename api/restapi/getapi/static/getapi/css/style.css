@@ -1,0 +1,30 @@
+#headline {
+  text-align: center;
+  color: red;
+}
+
+.container {
+  margin-left: 35%;
+}
+
+#method_selection {
+  padding: 10px;
+  float:left;
+}
+
+#form_block {
+  float:left;
+  margin-left: 10px;
+}
+
+#form_block #request_form h4 {
+  margin-bottom: 0px;
+}
+
+#form_block .request_field input {
+  margin: 10px 5px 10px 0;
+}
+
+#form_block #url_input {
+  width: 310px;
+}

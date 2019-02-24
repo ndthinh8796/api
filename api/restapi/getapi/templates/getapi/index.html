@@ -1,0 +1,47 @@
+{% extends 'getapi/base.html' %}
+
+{% block content %}
+    <h1 id='headline'>API TESTER</h1>
+    <div class="container">
+      <select id="method_selection" name="method" form="request_form">
+        <option value="get">Get</option>
+        <option value="post">Post</option>
+        <option value="delete">Delete</option>
+      </select>
+      <div id="form_block">
+        <form id="request_form" action="{% url 'getapi:detail' %}" method='get'>
+          {% csrf_token %}
+          <label for="url">URL: </label>
+          <input id="url_input" type="url" name="url" placeholder="https://api-web-service.com/method" required>
+
+          <div id="params_block">
+            <div class="request_field" id="params">
+              <input type="text" name="key" placeholder="key">
+              <input type="text" name="value" placeholder="value">
+            </div>
+            <button type="button" id="param_button">Add param</button>
+          </div>
+
+          <div id="headers_block">
+            <div class="request_field" id="headers">
+              <h4>Header</h4>
+              <input type="text" name="header_key" placeholder="header_key">
+              <input type="text" name="header_value" placeholder="header_value">
+            </div>
+            <button type="button" id="headers_button">Add data</button>
+          </div>
+
+          <div id="body_block">
+            <div class="request_field" id="body">
+              <h4>Body</h4>
+              <input type="text" name="body_key" placeholder="body_key">
+              <input type="text" name="body_value" placeholder="body_value">
+            </div>
+            <button type="button" id="body_button">Add data</button>
+          </div>
+          <br>
+          <input type="submit" value="Run">
+        </form>
+      </div>
+  </div>
+{% endblock %}
